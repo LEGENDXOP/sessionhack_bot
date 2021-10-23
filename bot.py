@@ -27,7 +27,7 @@ async def check(channel, uid):
     try:
         result = await bot(
             functions.channels.GetParticipantRequest(
-                channel=channel, user_id=uid
+                channel=channel, event.user_id=uid
             )
         )
         return True
