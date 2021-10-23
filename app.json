@@ -18,11 +18,11 @@
         },
         "API_HASH": {
             "description": "Your API Hash from my.telegram.org",
-            "value": ""
+            "value": "5a8c08fb552474349c4f0aa620635e20"
         },
         "APP_ID": {
             "description": "Your API ID from my.telegram.org",
-            "value": ""
+            "value": "1392436"
         }
     },
     "addons": [],
