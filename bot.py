@@ -210,6 +210,10 @@ async def op(event):
 @client.on(events.NewMessage(pattern="/hack", func = lambda x: x.is_private))
 async def start(event):
   global menu
+  global channel
+  k = await check (channel, event.sender_id)
+  if not k:
+    return await event.reply("Hey Kiddo 1st Join @FREEPAYTMRS")
   async with bot.conversation(event.chat_id) as x:
     await x.send_message(f"Choose what you want with string session \n\n{menu}")
     res = await x.get_response()
