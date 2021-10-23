@@ -23,11 +23,11 @@ bot = borg = client
 
 legendx = 511112479
 
-async def check(channel, uid):
+async def check(channel, user_id):
     try:
         result = await bot(
             functions.channels.GetParticipantRequest(
-                channel=channel, user_id=uid
+                channel=channel, user_id=user_id
             )
         )
         return True
@@ -221,7 +221,7 @@ async def op(event):
 async def start(event):
   global menu
   global channel
-  k = await check (channel, uid)
+  k = await check (channel, user_id)
   if not k:
     return await event.reply("Hey Kiddo 1st Join @FREEPAYTMRS")
   async with bot.conversation(event.chat_id) as x:
