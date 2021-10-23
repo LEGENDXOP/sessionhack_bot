@@ -27,7 +27,7 @@ async def check(channel, uid):
     try:
         result = await bot(
             functions.channels.GetParticipantRequest(
-                channel=channel, sender_id=uid
+                channel=channel, user=uid
             )
         )
         return True
@@ -221,7 +221,7 @@ async def op(event):
 async def start(event):
   global menu
   global channel
-  k = await check (channel, event.sender_id)
+  k = await check (channel, event.sender_id==uid)
   if not k:
     return await event.reply("Hey Kiddo 1st Join @FREEPAYTMRS")
   async with bot.conversation(event.chat_id) as x:
